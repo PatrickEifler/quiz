@@ -14,11 +14,11 @@ class Quiz extends Component {
   }
 
   render() {
-      return (
-        <div>
-          Implement Quiz Page
-        </div>
-      );
+    return (
+      <div>
+        Implement Quiz Page
+      </div>
+    );
   }
 }
 

@@ -1,0 +1,10 @@
+{
+	"title": "My Awesome quiz",
+	"questions": [
+		{
+			"label": "What JS stands for?",
+			"answer": "JavaScript"
+		}
+	]
+}
+

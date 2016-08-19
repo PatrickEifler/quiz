@@ -1,0 +1,3 @@
+export const QUIZ_GET_REQUEST = 'QUIZ_FETCH_REQUEST';
+export const REQUEST_QUIZ = 'REQUEST_QUIZ';
+export const RECEIVE_QUIZ = 'RECEIVE_QUIZ';

@@ -1,8 +1,4 @@
-const koa = require('koa');
-const app = koa();
+const http = require('http');
+const app = require('./src/app');
 
-app.use(function *() {
-    this.body = 'Hello from koajs';
-});
-
-app.listen(3000);
+http.createServer(app.callback()).listen(3000);
