@@ -7,8 +7,8 @@ import * as types from './constants';
 const fetchQuiz = (dispatch, getState) => {
 	dispatch(requestQuiz());
 
-	return fetch(service.url + '/quiz').then(
-		response => JSON.stringify(response.json())
+	return fetch(`${service.url}/quiz`).then(
+		response => response.json()
 	);
 };
 
