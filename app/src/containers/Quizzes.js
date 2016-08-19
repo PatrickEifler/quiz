@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
-//import { fetchCombosIfNeeded } from '../actions/combos';
+import { fetchQuizzesIfNeeded } from '../actions/quizzes';
 
 class Quizzes extends Component {
   constructor(props) {
@@ -9,14 +9,15 @@ class Quizzes extends Component {
 
   componentDidMount() {
     const { dispatch } = this.props;
-    //dispatch(fetchcombosIfNeeded());
-    console.log('quiz container props', this.props);
+    dispatch(fetchQuizzesIfNeeded());
+    //console.log('quiz container props', this.props);
   }
 
   render() {
+    console.log('quiz container props', this.props);
     return (
       <div>
-        Implement Quiz Page
+        Implement Quizzes Page
       </div>
     );
   }
@@ -24,8 +25,8 @@ class Quizzes extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    ...state.quizzes
+    quizzes: state.quizzes
   };
 }
 
-export default connect(mapStateToProps)(Quiz);
+export default connect(mapStateToProps)(Quizzes);

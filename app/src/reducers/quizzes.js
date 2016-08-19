@@ -7,7 +7,7 @@ const initialState = {
 	items: []
 };
 
-const quiz = (state=initialState, action) => {
+const quizzes = (state=initialState, action) => {
 	switch (action.type) {
 
 		case types.RECEIVE_QUIZZES:
@@ -36,4 +36,4 @@ const quiz = (state=initialState, action) => {
 	return state;
 };
 
-export default quiz;
+export default quizzes;

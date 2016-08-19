@@ -4,7 +4,7 @@ export default [
     link: '/'
   },
   {
-    label: 'Quiz',
-    link: '/quiz'
+    label: 'Quizzes',
+    link: '/quizzes'
   }
 ];
