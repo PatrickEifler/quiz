@@ -1,10 +1,10 @@
 export default [
   {
-        label: 'Start',
-        link: '/'
+    label: 'Start',
+    link: '/'
   },
   {
-        label: 'Quiz',
-        link: '/quiz'
+    label: 'Quiz',
+    link: '/quiz'
   }
 ];
