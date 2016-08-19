@@ -20,7 +20,7 @@ describe('api test', () => {
 		let req;
 		beforeEach(() => {
 			req = {
-        url: `http://localhost:${PORT}/quiz`,
+        url: `http://localhost:${PORT}/quizzes`,
         method: 'GET',
         json: true
       };
