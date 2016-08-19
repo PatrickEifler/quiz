@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = () => {
-  const quizCtrl = require('../controllers/quiz')();
+  const quizzesCtrl = require('../controllers/quizzes')();
   const router = require('koa-router')();
 
-  router.get('/quizzes/', quizCtrl.getQuiz);
+  router.get('/quizzes/', quizzesCtrl.getQuizzes);
 
   return router;
 };
