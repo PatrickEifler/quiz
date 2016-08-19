@@ -10,7 +10,6 @@ class Quizzes extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     dispatch(fetchQuizzesIfNeeded());
-    //console.log('quiz container props', this.props);
   }
 
   render() {
