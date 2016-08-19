@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 //import { fetchCombosIfNeeded } from '../actions/combos';
 
-class Quiz extends Component {
+class Quizzes extends Component {
   constructor(props) {
     super(props);
   }
@@ -24,7 +24,7 @@ class Quiz extends Component {
 
 function mapStateToProps(state, ownProps) {
   return {
-    ...state.quiz
+    ...state.quizzes
   };
 }
 
