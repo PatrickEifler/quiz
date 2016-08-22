@@ -7,6 +7,7 @@ import Quizzes from './containers/Quizzes';
 export default (
   <Route path="/" component={App}>
   	<Route path="/quizzes" component={Quizzes}/>
+  	<Route path="/quizzes/:uid" component={Quiz}/>
   </Route>
 );
-//TODO: <Route path="/quizzes/:id" component={Quiz}/>
+//TODO: <Route path="/quizzes/:id/questions/:id" component={Question}/>

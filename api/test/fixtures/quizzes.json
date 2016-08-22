@@ -1,0 +1,22 @@
+[
+	{
+		"uid": "1",
+		"title": "My Awesome quiz",
+		"questions": [
+			{
+				"label": "What JS stands for?",
+				"answer": "JavaScript"
+			}
+		]
+	},
+	{
+		"uid": "2",
+		"title": "My second quiz",
+		"questions": [
+			{
+				"label": "What is your name?",
+				"answer": "Dog"
+			}
+		]
+	}
+]

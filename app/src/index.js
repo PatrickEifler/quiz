@@ -9,9 +9,9 @@ const store = configureStore({}, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 
 function main() {
-    const app = document.createElement('div');
-    document.body.appendChild(app);
-    ReactDom.render(<Root store={store} history={history} />, app);
+  const app = document.createElement('div');
+  document.body.appendChild(app);
+  ReactDom.render(<Root store={store} history={history} />, app);
 }
 
 main();

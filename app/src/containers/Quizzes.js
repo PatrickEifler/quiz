@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuizzesIfNeeded } from '../actions/quizzes';
+import quizList from '../components/quizList';
 
 class Quizzes extends Component {
   constructor(props) {
@@ -13,10 +14,10 @@ class Quizzes extends Component {
   }
 
   render() {
-    console.log('quiz container props', this.props);
     return (
       <div>
-        Implement Quizzes Page
+        <h1>Quizzes</h1>
+        <quizList items={this.props.quizzes}/>
       </div>
     );
   }
