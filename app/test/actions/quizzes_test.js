@@ -10,7 +10,7 @@ import quizMock from '../mocks/quizzes';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-describe('Quiz Actions', () => {
+describe('Quizzes Actions', () => {
 	describe('fetchQuizzes()', () => {
 		beforeEach(() => {
 			nock(service.url)
@@ -27,7 +27,21 @@ describe('Quiz Actions', () => {
 			return store.dispatch(quizActions.fetchQuizzesIfNeeded(quizMock)).then(() => {
 				assert.deepEqual(store.getActions()[0], { type: 'REQUEST_QUIZZES' });
 				assert.equal(store.getActions()[1].type, 'RECEIVE_QUIZZES');
-				assert.deepEqual(store.getActions()[1].quizzes, quizMock);
+				assert.deepEqual(store.getActions()[1].items, [
+						{ uid: '1', title: 'My test quiz', questions: [
+							{
+								label: 'What tdd stands for?',
+								answer: 'test driven development'
+							}
+						] },
+					  { uid: '2', title: 'My second test quiz', questions: [
+					  	{
+					  		label: 'What is Redux?',
+					  		answer: 'It is Awesome.'
+					  	}
+					  ] }
+					]
+				);
 			});
 		});
 		it('should not fetch the quiz data if already fetching', () => {

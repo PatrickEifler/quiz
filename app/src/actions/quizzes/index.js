@@ -12,9 +12,9 @@ const fetchQuizzes = (dispatch, getState) => {
 			'Content-Type': 'application/json'
 		},
 		mode: 'cors'
-	}).then(
-		response => response.json()
-	).catch(error => console.log('fetch error', error));
+	})
+	.then(response => response.json())
+	.catch(error => console.log('error fetching quizzes', error));
 };
 
 const shouldFetchQuizzes = (state) => !(state.quizzes && state.quizzes.isFetching);
@@ -22,7 +22,6 @@ const shouldFetchQuizzes = (state) => !(state.quizzes && state.quizzes.isFetchin
 const requestQuizzes = () => ({ type: types.REQUEST_QUIZZES });
 
 const receiveQuizzes = (quizzes) => {
-	console.log('quizzes', quizzes);
 	return {
 		type: types.RECEIVE_QUIZZES,
 		lastReceived: Date.now(),
@@ -32,7 +31,7 @@ const receiveQuizzes = (quizzes) => {
 
 export function fetchQuizzesIfNeeded() {
 	return (dispatch, getState) => {
-		if (true) {
+		if (shouldFetchQuizzes(getState())) {
 			return fetchQuizzes(dispatch, getState).then(
 				quizzes => {
 					dispatch(receiveQuizzes(quizzes));
