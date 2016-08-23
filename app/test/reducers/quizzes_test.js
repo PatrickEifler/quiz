@@ -1,6 +1,6 @@
 import { assert }  from 'chai';
 import * as types from '../../src/actions/quizzes/constants';
-import quizzesMock from '../mocks/quizzes';
+import quizzes from '../fixtures/quizzes';
 import quizzesReducer from '../../src/reducers/quizzes';
 
 describe('Quizzes Reducer', () => {
@@ -24,13 +24,13 @@ describe('Quizzes Reducer', () => {
 		it('should map the quiz data on success', () => {
 			assert.deepEqual(quizzesReducer(undefined, {
 				type: types.RECEIVE_QUIZZES,
-				items: quizzesMock,
+				items: quizzes,
 				lastReceived: 10101010
 			}),
 			{
 				isFetching: false,
 				lastReceived: 10101010,
-				items: quizzesMock
+				items: quizzes
 			}
 			);
 		});
@@ -39,13 +39,13 @@ describe('Quizzes Reducer', () => {
 				isFetching: false
 				}, {
 					type: types.RECEIVE_QUIZZES,
-					items: quizzesMock,
+					items: quizzes,
 					lastReceived: 10101010
 				}),
 				{
 					isFetching: false,
 					lastReceived: 10101010,
-					items: quizzesMock
+					items: quizzes
 				}
 			);
 		});

@@ -21,21 +21,17 @@ const shouldFetchQuizzes = (state) => !(state.quizzes && state.quizzes.isFetchin
 
 const requestQuizzes = () => ({ type: types.REQUEST_QUIZZES });
 
-const receiveQuizzes = (quizzes) => {
-	return {
-		type: types.RECEIVE_QUIZZES,
-		lastReceived: Date.now(),
-		items: quizzes
-	};
-};
+const receiveQuizzes = (quizzes) => ({
+	type: types.RECEIVE_QUIZZES,
+	lastReceived: Date.now(),
+	items: quizzes
+});
 
 export function fetchQuizzesIfNeeded() {
 	return (dispatch, getState) => {
 		if (shouldFetchQuizzes(getState())) {
 			return fetchQuizzes(dispatch, getState).then(
-				quizzes => {
-					dispatch(receiveQuizzes(quizzes));
-				}
+				quizzes => dispatch(receiveQuizzes(quizzes))
 			);
 		}
 	};
