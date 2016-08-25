@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Quiz from '../components/quiz';
+import Question from '../components/question';
 
 export default class Quiz extends Component {
 	constructor() {
@@ -10,11 +11,17 @@ export default class Quiz extends Component {
 		const dispatch = this.props;
 		//dispatch(fetchQuiz());
 		console.log('origin', location.origin);
-		console.log('params', this.props.params.uid);
+		console.log('params', this.props.params);
 	}
 
  	render() {
- 		<Quiz />;
+ 		return (
+ 			<div>
+ 				<Quiz />
+ 				<Question />
+ 				<QuizResult />
+ 			</div>
+ 		);
 	}
 }
 

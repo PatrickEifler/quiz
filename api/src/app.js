@@ -10,7 +10,7 @@ app.use(cors());
 app.use(router().routes());
 
 app.use(function *() {
-  this.body = 'Hello from koajs';
+  this.body = '';
 });
 
 module.exports = app;
