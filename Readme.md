@@ -1,5 +1,7 @@
-Koa Redux Boilerplate
+QUIZ
 =====================
+
+An attempt to implement a quiz engine in koa, redux and react.
 
 ### Usage
 
