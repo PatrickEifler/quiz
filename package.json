@@ -7,7 +7,7 @@
     "webserver": "node api/server.js",
     "dev": "node_modules/.bin/webpack-dev-server",
     "build": "node_modules/.bin/webpack",
-    "test": "mocha --compilers js:babel-core/register --recursive --require ./app/test/test_helper.js 'app/test/**/*.@(js)' 'api/test/**/*.@(js)'",
+    "test": "npm run test:api && npm run test:app",
     "test:watch": "npm run test -- --watch",
     "test:app": "mocha --compilers js:babel-core/register --recursive --require ./app/test/test_helper.js 'app/test/**/*.@(js)'",
     "test:app:watch": "npm run test:app -- --watch",
@@ -55,8 +55,12 @@
     "webpack": "^1.13.2"
   },
   "devDependencies": {
+    "babel-eslint": "^6.1.2",
     "chai": "^3.5.0",
+    "eslint": "^3.4.0",
     "eslint-loader": "^1.5.0",
+    "eslint-plugin-react": "^6.2.0",
+    "jsdom": "^9.5.0",
     "mocha": "^3.0.2",
     "nock": "^8.0.0",
     "react-hot-loader": "^1.3.0",
