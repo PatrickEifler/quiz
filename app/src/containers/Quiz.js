@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Quiz from '../components/quiz';
 import Question from '../components/question';
 
-export default class Quiz extends Component {
+class QuizContainer extends Component {
 	constructor() {
 		super(props);
 	}
@@ -19,11 +20,13 @@ export default class Quiz extends Component {
  			<div>
  				<Quiz />
  				<Question />
- 				<QuizResult />
+ 				
  			</div>
  		);
 	}
 }
+
+//<QuizResult />
 
 function mapStateToProps(state, ownProps) {
 	return {
@@ -31,4 +34,4 @@ function mapStateToProps(state, ownProps) {
 	};
 }
 
-export default connect(mapStateToProps)(Quiz);
+export default connect(mapStateToProps)(QuizContainer);
