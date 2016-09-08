@@ -31,15 +31,18 @@ describe('Quiz Actions', () => {
 					questions: [
 						{
 							label: 'What tdd stands for?',
-							answer: 'test driven development'
+							answer: 'test driven development',
+							uid: 'q1'
 						},
 						{
 							label: 'What /W stands for?',
-							answer: 'white space in regex'
+							answer: 'white space in regex',
+							uid: 'q2'
 						},
 						{
 							label: 'What /b stands for?',
-							answer: 'last character in regex string'
+							answer: 'last character in regex string',
+							uid: 'q3'
 						}
 					]
 				});
