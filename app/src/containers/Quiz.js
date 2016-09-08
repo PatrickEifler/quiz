@@ -4,7 +4,7 @@ import Quiz from '../components/quiz';
 import Question from '../components/question';
 
 class QuizContainer extends Component {
-	constructor() {
+	constructor(props) {
 		super(props);
 	}
 

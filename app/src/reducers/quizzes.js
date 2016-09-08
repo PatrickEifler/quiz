@@ -4,7 +4,7 @@ import * as types from '../actions/quizzes/constants';
 
 const initialState = {
 	isFetching: false,
-	items: []
+	quizItems: []
 };
 
 const quizzes = (state=initialState, action) => {
@@ -14,14 +14,13 @@ const quizzes = (state=initialState, action) => {
 			return Object.assign({}, state, {
 				isFetching: false,
 				lastReceived: action.lastReceived,
-				items: action.items.map((q, i) => {
+				quizItems: action.items.map((q, i) => {
 					return {
 						uid: q.uid || i,
 						title: q.title,
 						questions: q.questions
 					};
 				})
-
 			});
 
 		case types.REQUEST_QUIZZES:

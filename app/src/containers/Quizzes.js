@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuizzesIfNeeded } from '../actions/quizzes';
-import quizList from '../components/quizList';
+import QuizList from '../components/quizList';
 
 class Quizzes extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Quizzes extends Component {
     return (
       <div>
         <h1>Quizzes</h1>
-        <quizList items={this.props.quizzes}/>
+        <QuizList quizItems={this.props.quizzes.quizItems}/>
       </div>
     );
   }

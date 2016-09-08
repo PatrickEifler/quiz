@@ -11,11 +11,12 @@ const quiz = (state=initialState, action) => {
 	switch (action.type) {
 
 		case types.RECEIVE_QUIZ:
+			console.log('quiz', action)
 			return Object.assign({}, state, {
 				isFetching: false,
 				lastReceived: action.lastReceived,
-				quiz: action.quiz,
-				currentQuestion: ''
+				quiz: action.quiz
+				//currentQuestion: ''
 			});
 
 		case types.REQUEST_QUIZ:
