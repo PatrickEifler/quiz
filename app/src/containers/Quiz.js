@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchQuiz } from '../actions/quiz';
 import Quiz from '../components/quiz';
 import Question from '../components/question';
 
@@ -9,10 +10,12 @@ class QuizContainer extends Component {
 	}
 
 	componentDidMount() {
-		const dispatch = this.props;
-		//dispatch(fetchQuiz());
-		console.log('origin', location.origin);
+		const { params, dispatch } = this.props; 
+		dispatch(fetchQuiz(params.uid));
+
+		console.log('location', location);
 		console.log('params', this.props.params);
+		console.log('props quiz', this.props.quiz)
 	}
 
  	render() {
