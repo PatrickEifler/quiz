@@ -23,7 +23,7 @@ const receiveQuiz = (quiz) => ({
 	quiz
 });
 
-export default function fetchQuiz(uid) {
+export function fetchQuiz(uid) {
 	const _uid = uid;
 	return (dispatch, getState, _uid) => {
 		return fetchQuizByUid(dispatch, getState, uid).then(
