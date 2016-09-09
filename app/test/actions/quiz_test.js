@@ -2,7 +2,7 @@ import { assert } from 'chai';
 import nock from 'nock';
 import thunk from 'redux-thunk';
 import configureMockStore from 'redux-mock-store';
-import fetchQuiz from '../../src/actions/quiz';
+import { fetchQuiz } from '../../src/actions/quiz';
 import service from '../../src/config/service';
 import quiz from '../fixtures/quiz';
 
