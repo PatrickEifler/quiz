@@ -4,18 +4,18 @@ import * as types from '../actions/quiz/constants';
 
 const initialState = {
 	isFetching: false,
-	quiz: {}
+	item: {}
 };
 
 const quiz = (state=initialState, action) => {
 	switch (action.type) {
 
 		case types.RECEIVE_QUIZ:
-			console.log('quiz', action)
+			console.log('quiz', action.quiz)
 			return Object.assign({}, state, {
 				isFetching: false,
 				lastReceived: action.lastReceived,
-				quiz: action.quiz
+				item: action.quiz
 				//currentQuestion: ''
 			});
 

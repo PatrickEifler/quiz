@@ -1,8 +1,13 @@
 import React from 'react';
 
 export default (props) => {
+	const { item } = props.quiz;
+	const { uid, title, questions } = item;
+	
 	return (
-		<div className='quiz'></div>
+		<div className={`quiz-${uid}`}>
+			<h2 className='quiz-title'>{title}</h2>
+		</div>
 	);
 };
 

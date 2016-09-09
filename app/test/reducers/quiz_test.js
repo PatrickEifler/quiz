@@ -6,14 +6,14 @@ describe('Quiz Reducer', () => {
 	it('should return the initial state', () => {
 		assert.deepEqual(quizReducer(undefined, {}), {
 			isFetching: false,
-			quiz: {}
+			item: {}
 		});
 	});
 
 	it('should set the isFetching flag if the request is being send', () => {
 		assert.deepEqual(quizReducer(undefined, { type: 'REQUEST_QUIZ' }), {
 			isFetching: true,
-			quiz: {}
+			item: {}
 		});
 	});
 
@@ -26,7 +26,7 @@ describe('Quiz Reducer', () => {
 			}), {
 				isFetching: false,
 				lastReceived: 1,
-				quiz: {
+				item: {
 					title: 'My test quiz',
 					uid: 'quiz_1',
 					questions: [
