@@ -9,3 +9,9 @@ export function askQuestion(uid) {
 		})
 	};
 }
+
+export function abortQuestion(uid) {
+	return {
+		type: types.ABORT_QUESTION
+	}
+};

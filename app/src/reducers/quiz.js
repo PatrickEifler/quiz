@@ -23,7 +23,8 @@ const quiz = (state=initialState, action) => {
 				isFetching: true
 			});
 
-		case types.START_QUIZ: 
+		case types.START_QUIZ:
+			console.log('start quiz', state)
 			return Object.assign({}, state, {
 				hasStarted: true
 			});

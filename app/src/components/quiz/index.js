@@ -9,9 +9,10 @@ export default (props) => {
 	return (
 		<div className={`quiz-${uid}`}>
 			<h2 className='quiz-title'>{title}</h2>
-			<Question 
+			<Question className={hasStarted ? 'show' : 'hide'}
 				question={props.questions.active} 
-				show={props.questions.isAsking} />
+				show={props.questions.isAsking}
+				abort={props.abort} />
 			<button onClick={callback} >{label}</button>
 		</div>
 	);
