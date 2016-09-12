@@ -30,4 +30,10 @@ export function fetchQuiz(uid) {
 			quiz => dispatch(receiveQuiz(quiz))
 		);
 	};
+}
+
+export function startQuiz(uid) {
+	return {
+		type: types.START_QUIZ
+	}
 };

@@ -10,6 +10,9 @@ class App extends Component {
   }
 
   render() {
+    
+    require('../scss/base.scss');
+    
     const { location, isFetching, lastUpdated, children } = this.props;
     return (
       <div>

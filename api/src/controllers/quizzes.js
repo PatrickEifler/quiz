@@ -7,7 +7,7 @@ module.exports = (path) => {
 	return {
 		getQuizzes: function*() {
 			let quizzes = yield fs.readFile(path, 'utf8');
-
+			
 			if (!quizzes) {
 			  return this.throw(404, 'quizzes file not found');
 			}

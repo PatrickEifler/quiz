@@ -6,14 +6,16 @@ describe('Quiz Reducer', () => {
 	it('should return the initial state', () => {
 		assert.deepEqual(quizReducer(undefined, {}), {
 			isFetching: false,
-			item: {}
+			item: {},
+			hasStarted: false
 		});
 	});
 
 	it('should set the isFetching flag if the request is being send', () => {
 		assert.deepEqual(quizReducer(undefined, { type: 'REQUEST_QUIZ' }), {
 			isFetching: true,
-			item: {}
+			item: {},
+			hasStarted: false
 		});
 	});
 
@@ -22,10 +24,11 @@ describe('Quiz Reducer', () => {
 			assert.deepEqual(quizReducer(undefined, {
 				type: 'RECEIVE_QUIZ',
 				lastReceived: 1,
-				quiz: quiz
+				quiz: quiz,
 			}), {
 				isFetching: false,
 				lastReceived: 1,
+				hasStarted: false,
 				item: {
 					title: 'My test quiz',
 					uid: 'quiz_1',
