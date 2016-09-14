@@ -11,7 +11,7 @@ export default (props) => {
 			<h2 className='quiz-title'>{title}</h2>
 			<Question className={hasStarted ? 'show' : 'hide'}
 				question={props.questions.active} 
-				show={props.questions.isAsking}
+				isAsking={props.questions.isAsking}
 				abort={props.abort} />
 			<button onClick={callback} >{label}</button>
 		</div>
