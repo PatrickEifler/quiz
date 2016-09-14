@@ -11,7 +11,6 @@ const initialState = {
 const quiz = (state=initialState, action) => {
 	switch (action.type) {
 		case types.ASK_QUESTION:
-			console.log('ASK==========', state)
 			return Object.assign({}, state, {
 				items: action.questions,
 				active: action.questions[0],

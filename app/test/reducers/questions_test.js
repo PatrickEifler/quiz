@@ -12,12 +12,17 @@ describe('Questions Reducer', () => {
 	});
 
 	describe('askQuestion', () => {
-		it('should get the active question', ()=> {
-			
-		});
 		it('should shuffle the questions array and remove the last active questions', () => {
 
 		});
+		it('should remove the already asked questions from the questions state', () => {
+			
+		})
+		it('should get the active question', ()=> {
+			
+		});
+
+
 	});
 
 
