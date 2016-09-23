@@ -57,7 +57,7 @@ class QuizContainer extends Component {
 
 		} else if (isLastQuestion) {
 			label = 'finish quiz';
-			
+			callback = this.finishQuiz;
 		} else if (hasStarted && isAsking) {
 			label = 'next question';
 			callback = this.nextQuestion;
