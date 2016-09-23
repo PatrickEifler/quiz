@@ -2,7 +2,6 @@
 
 import * as types from '../actions/questions/constants';
 import shuffle from '../lib/shuffle';
-import diff from '../lib/diff';
 
 const initialState = {
 	items: [],
