@@ -1,6 +1,6 @@
 'use strict';
 
-export default function shuffle (arr) {
+const shuffle = (arr) => {
 	var copy = arr.slice();
 	var len = copy.length;
 	var idx;
@@ -19,3 +19,5 @@ export default function shuffle (arr) {
 
 	return copy;
 }
+
+export default shuffle;

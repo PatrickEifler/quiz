@@ -1,0 +1,49 @@
+// Follow http://www.kenpowers.net/blog/testing-in-browsers-and-node/
+// Export modules to global scope as necessary (only for testing)
+//if (typeof process !== 'undefined' && process.title === 'node') {
+//  // We are in node. Everything is cover by our test_helper
+//  isBrowser = false;
+//} else {
+//  // We are in the browser. Set up variables like above using served js files.
+//  expect = chai.expect;
+//  // num and sinon already exported globally in the browser.
+//  isBrowser = true;
+//}
+
+// Follow reactjsnews.com/testing-in-react/
+// This is to fix double including of babel
+// rethink-weekly/client/node_modules/babel/node_modules/babel-core/lib/polyfill.js:8
+// will throw new Error("only one instance of babel/polyfill is allowed");
+// https://github.com/babel/babel/issues/1019
+if (!global._babelPolyfill) {
+ require("babel-core/register")({
+   stage: 0
+  })
+}
+
+import jsdom from 'node-jsdom'
+
+// setup the simplest document possible
+let doc = jsdom.jsdom('<!doctype html><html><body></body></html>');
+
+// get the window object out of the document
+let win = doc.defaultView;
+
+// set globals for mocha that make access to document and window feel
+// natural in the test environment
+global.document = doc;
+global.window = win;
+
+// take all properties of the window object and also attach it to the
+// mocha global object
+propagateToGlobal(win);
+
+// from mocha-jsdom https://github.com/rstacruz/mocha-jsdom/blob/master/index.js#L80
+function propagateToGlobal (window) {
+  for (let key in window) {
+    if (!window.hasOwnProperty(key)) continue
+    if (key in global) continue
+
+    global[key] = window[key]
+  }
+}

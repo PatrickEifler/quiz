@@ -6,6 +6,26 @@
 			{
 				"label": "What JS stands for?",
 				"answer": "JavaScript"
+			},
+			{
+				"label": "What is next to A?",
+				"answer": "B"
+			},
+			{
+				"label": "What is next to B?",
+				"answer": "B"
+			},
+			{
+				"label": "What is next to C?",
+				"answer": "D"
+			},
+			{
+				"label": "What is next to D?",
+				"answer": "E"
+			},
+			{
+				"label": "What is next to E?",
+				"answer": "F"
 			}
 		]
 	},

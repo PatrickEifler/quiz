@@ -1,2 +1,3 @@
+export const SET_QUESTIONS = 'SET_QUESTIONS';
 export const ASK_QUESTION = 'ASK_QUESTION';
 export const ABORT_QUESTION = 'ABORT_QUESTION';

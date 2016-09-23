@@ -1,8 +1,8 @@
 {
   "presets": [
     "es2015",
-    "stage-0",
+    "latest",
     "react"
   ],
-  plugins: ["transform-object-rest-spread"]
+  plugins: ["babel-plugin-rewire", "transform-object-rest-spread"]
 }
