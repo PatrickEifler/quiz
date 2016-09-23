@@ -1,7 +1,7 @@
 QUIZ [![Build Status](https://travis-ci.org/PatrickEifler/quiz.svg?branch=master)](https://travis-ci.org/PatrickEifler/quiz)
 =====================
 
-An attempt to implement a quiz engine in koa, redux and react.
+A quiz engine in koa, redux and react.
 
 ### Usage
 
