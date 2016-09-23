@@ -11,7 +11,8 @@ export default class Question extends React.Component{
 	render() {
 		return (
 			<div className={'question', this.props.isAsking ? 'show': 'hide'}>
-				{this.props.question.label}
+				<div className='label'> {this.props.question.label} </div>
+				
 			</div>
 		);
 	}

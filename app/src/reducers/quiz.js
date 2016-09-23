@@ -24,7 +24,6 @@ const quiz = (state=initialState, action) => {
 			});
 
 		case types.START_QUIZ:
-			console.log('start quiz', state)
 			return Object.assign({}, state, {
 				hasStarted: true
 			});
@@ -36,6 +35,8 @@ const quiz = (state=initialState, action) => {
 				//score from each question
 				//mover ranking reducer
 			});
+
+		//TODO: Add abort quiz action reducer
 
 		default:
 			return state;

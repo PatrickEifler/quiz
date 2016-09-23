@@ -3,7 +3,7 @@ import Question from '../question';
 
 export default (props) => {
 	const { item } = props.quiz;
-	const { label, callback } = props.quizAction;
+	const { label, callback, actionTagClass } = props.quizAction;
 	const { title, uid, hasStarted } = item;
 	
 	return (
@@ -13,7 +13,9 @@ export default (props) => {
 				question={props.questions.active} 
 				isAsking={props.questions.isAsking}
 				abort={props.abort} />
-			<button onClick={callback} >{label}</button>
+			<button className={actionTagClass}
+				onClick={callback} >{label}
+			</button>
 		</div>
 	);
 };
