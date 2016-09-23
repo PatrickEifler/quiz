@@ -27,5 +27,13 @@ describe('Store Test', () => {
 				locationBeforeTransitions: null
 			});
 		});
+		it('should map the initial state of the questions reducer', () => {
+			assert.deepEqual(store.getState().questions, {
+				items: [],
+				active: {},
+				isAsking: false,
+				isLastQuestion: false
+			})
+		})
 	});
 })

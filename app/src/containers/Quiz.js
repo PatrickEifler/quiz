@@ -17,7 +17,7 @@ class QuizContainer extends Component {
 	}
 
 	componentDidMount() {
-		this.dispatch(fetchQuiz(this.params.uid)).then(res => this.dispatch(setQuestions()));	
+		this.dispatch(fetchQuiz(this.params.uid)).then(() => this.dispatch(setQuestions()));	
 	}
 
 	start() {
