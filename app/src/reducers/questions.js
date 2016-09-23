@@ -36,16 +36,15 @@ const questions = (state=initialState, action) => {
 		case types.ANSWER_QUESTION:
 			return Object.assign({}, state, {
 				isAsking: false
+				//implement answer options
 				//check if answer is correct or false
-				//get the next question to ask for the button link
+				//get the next question to ask
 				//compute score for current question and cache it
 			});
 
 		case types.ABORT_QUESTION:
 			return Object.assign({}, state, {
 				isAsking: false
-				//get the quiz results
-				//score from each question
 			});
 
 		default:
