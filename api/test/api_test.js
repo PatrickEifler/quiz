@@ -36,16 +36,45 @@ describe('api test', () => {
         assert.deepEqual(body, [{
 						uid: '1',
 						title: 'My Awesome quiz',
-						questions: [{
-							label: 'What JS stands for?',
-							answer: 'JavaScript'
-						}]
+						questions: [
+							{
+								answer: "JavaScript",
+								label: "What JS stands for?",
+								uid: "q1"
+							},
+							{
+								answer: "B",
+								label: "What is next to A?",
+								uid: "q2"
+							},
+							{
+								answer: "B",
+								label: "What is next to B?",
+								uid: "q3"
+							},
+							{
+								answer: "D",
+								label: "What is next to C?",
+								uid: "q4"
+							},
+							{
+								answer: "E",
+								label: "What is next to D?",
+								uid: "q5"
+							},
+							{
+								answer: "F",
+								label: "What is next to E?",
+								uid: "q6"
+							}
+						]
 					},
 					{
 						uid: '2',
 						title: 'My second quiz',
 						questions: [
 							{
+								uid: 'q1111',
 								label: 'What is your name?',
 								answer: 'Dog'
 							}
@@ -70,9 +99,35 @@ describe('api test', () => {
 					uid: '1',
 					title: 'My Awesome quiz',
 					questions: [
-						{
+						{	
+							uid: 'q1',
 							label: 'What JS stands for?',
 							answer: 'JavaScript'
+						},
+						{
+							answer: "B",
+							label: "What is next to A?",
+							uid: "q2"
+						},
+						{
+							answer: "B",
+							label: "What is next to B?",
+							uid: "q3"
+						},
+						{
+							answer: "D",
+							label: "What is next to C?",
+							uid: "q4"
+						},
+						{
+							answer: "E",
+							label: "What is next to D?",
+							uid: "q5"
+						},
+						{
+							answer: "F",
+							label: "What is next to E?",
+							uid: "q6"
 						}
 					]
 				});

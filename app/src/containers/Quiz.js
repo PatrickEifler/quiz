@@ -66,7 +66,7 @@ class QuizContainer extends Component {
 		return {
 			label: label,
 			callback: callback,
-			actionTagClass: 'show' 
+			actionTagClass: 'show' //!hasStarted || !isAsking 
 		}
 	}
 
