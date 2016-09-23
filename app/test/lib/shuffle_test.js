@@ -20,6 +20,6 @@ describe('Shuffle Test', () => {
 				obj5: 0
 			}
 		]
-		assert.notDeepEqual(shuffle(inputArr)[0], inputArr[0]);
+		assert.notDeepEqual(shuffle(inputArr), inputArr);
 	})
 })

@@ -20,7 +20,7 @@ describe('Quizzes Reducer', () => {
 		});
 	});
 
-	describe('get quiz', () => {
+	describe('get quizzes', () => {
 		it('should map the quiz data on success', () => {
 			assert.deepEqual(quizzesReducer(undefined, {
 				type: types.RECEIVE_QUIZZES,
