@@ -7,7 +7,8 @@ import diff from '../lib/diff';
 const initialState = {
 	items: [],
 	active: {},
-	isAsking: false
+	isAsking: false,
+	isLastQuestion: false
 };
 
 const questions = (state=initialState, action) => {
@@ -19,12 +20,13 @@ const questions = (state=initialState, action) => {
 
 		case types.ASK_QUESTION:
 			let active = shuffle(action.questions).shift();
+			let questionsLeft = action.questions.filter(el => el.uid !== active.uid);
 
 			return Object.assign({}, state, {
-				items: action.questions.filter(el => el.uid !== active.uid),
+				items: questionsLeft,
 				active: active,
-				isAsking: true
-
+				isAsking: true,
+				isLastQuestion: questionsLeft.length === 0
 				//get question to ask from the questions array by shuffling the array
 				//store the question which have been asked in a cache
 				//diff the cache against the questions array

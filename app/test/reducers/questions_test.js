@@ -12,7 +12,8 @@ describe('Questions Reducer', () => {
 		assert.deepEqual(questionsReducer(undefined, {}), {
 			items: [],
 			active: {},
-			isAsking: false
+			isAsking: false,
+			isLastQuestion: false
 		});
 	});
 
@@ -21,7 +22,8 @@ describe('Questions Reducer', () => {
 			assert.deepEqual(questionsReducer({
 				items: quiz.questions,
 				active: {},
-				isAsking: false
+				isAsking: false,
+				isLastQuestion: false
 			}, 
 			{
 				type: 'ASK_QUESTION',
@@ -34,6 +36,7 @@ describe('Questions Reducer', () => {
 					answer: 'test driven development'
 				},
 				isAsking: true,
+				isLastQuestion: false,
 				items: [
 					{
 						uid: 'q2',
@@ -67,6 +70,7 @@ describe('Questions Reducer', () => {
 					label: 'What /W stands for?',
 					answer: 'white space in regex'
 				},
+				isLastQuestion: false,
 				isAsking: true,
 				items: [
 					{
@@ -80,6 +84,7 @@ describe('Questions Reducer', () => {
 
 		it('should set the last question flag if the list is empty', () => {
 			const questions = quiz.questions.slice(2, quiz.questions.length);
+
 			assert.deepEqual(questionsReducer({
 				items: quiz.questions,
 				active: {},
@@ -95,20 +100,12 @@ describe('Questions Reducer', () => {
 					label: 'What /b stands for?',
 					answer: 'last character in regex string'
 				},
+				isLastQuestion: true,
 				isAsking: true,
 				items: []
 			});
 		})
 
-		it('should remove the already asked questions from the questions state', () => {
-
-		})
-		it('should get the active question', ()=> {
-			
-		});
-
-
 	});
-
 
 });
