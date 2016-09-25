@@ -6,32 +6,94 @@
 			{
 				"uid": "q1",
 				"label": "What JS stands for?",
-				"answer": "JavaScript"
+				"answer": {
+					"type":"option",
+					"options": [
+						{		
+							"label": "John Sinclair"
+						},
+						{
+							"label": "John Smith"
+						},
+						{
+							"label": "Javascript",
+							"correct": "true"
+						},
+						{
+							"label": "Just smile"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q2",
 				"label": "What is next to A?",
-				"answer": "B"
+				"answer": {
+					"type":"text",
+					"options": [
+						{		
+							"label": "A"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q3",
 				"label": "What is next to B?",
-				"answer": "B"
+				"answer": {
+					"type":"text",
+					"options": [
+						{		
+							"label": "B"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q4",
 				"label": "What is next to C?",
-				"answer": "D"
+				"answer": {
+					"type":"text",
+					"options": [
+						{		
+							"label": "D"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q5",
 				"label": "What is next to D?",
-				"answer": "E"
+				"answer": {
+					"type":"text",
+					"options": [
+						{		
+							"label": "E"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q6",
 				"label": "What is next to E?",
-				"answer": "F"
+				"answer": {
+					"type":"option",
+					"options": [
+						{		
+							"label": "F",
+							"correct": "true"
+						},
+						{
+							"label": "A"
+						},
+						{
+							"label": "B"
+						},
+						{
+							"label": "C"
+						}
+					]
+				}
 			}
 		]
 	},
@@ -42,7 +104,14 @@
 			{
 				"uid": "q1111",
 				"label": "What is your name?",
-				"answer": "Dog"
+				"answer": {
+					"type": "text",
+					"options": [
+						{
+							"label": "Dog"
+						}
+					]
+				}
 			}
 		]
 	}

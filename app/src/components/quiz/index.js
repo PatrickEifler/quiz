@@ -4,17 +4,19 @@ import Question from '../question';
 
 
 export default (props) => {
-	const { item } = props.quiz;
-	const { title, uid, hasStarted } = item;
-	
+	const { title, uid } = props.quiz.item;
+
 	return (
-		<div className={`quiz-${uid}`}>
+		<div className={`quiz-container-${uid}`}>
 			<h2 className='quiz-title'>{title}</h2>
-			
-			<Question className={hasStarted ? 'show' : 'hide'}
-				question={props.questions.active} 
-				isAsking={props.questions.isAsking}
-				abort={props.abort} />
+			<div className='quiz-body'>
+
+				<Question className='question'
+					question={props.questions.active} 
+					isAsking={props.questions.isAsking}
+					answerQuestion={props.answerQuestion}
+					abort={props.abort} />
+			</div>
 
 			<Action action={props.quizAction} />
 		</div>

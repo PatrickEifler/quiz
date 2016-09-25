@@ -15,10 +15,10 @@ export function askQuestion() {
 }
 
 export function answerQuestion(answer) {
-	return (dispatch, getState) => {
+	return (dispatch, getState) => dispatch({
 		type: types.ANSWER_QUESTION,
 		answer: answer
-	}
+	})
 }
 
 export function abortQuestion(uid) {

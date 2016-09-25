@@ -11,7 +11,15 @@
 			{
 				"uid": "q2",
 				"label": "What is next to A?",
-				"answer": "B"
+				"answer": {
+					"type":"text",
+					"options": [
+						{		
+							"label": "B",
+							"correct": "true"
+						}
+					]
+				}
 			},
 			{
 				"uid": "q3",

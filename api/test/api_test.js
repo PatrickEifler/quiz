@@ -38,32 +38,94 @@ describe('api test', () => {
 						title: 'My Awesome quiz',
 						questions: [
 							{
-								answer: "JavaScript",
+								answer: {
+									type: "option",
+									options: [
+										{		
+											label: "John Sinclair"
+										},
+										{
+											label: "John Smith"
+										},
+										{
+											label: "Javascript",
+											correct: "true"
+										},
+										{
+											label: "Just smile"
+										}
+									]
+								},
 								label: "What JS stands for?",
 								uid: "q1"
 							},
 							{
-								answer: "B",
+								answer: {
+									type: "text",
+									options: [
+										{		
+											label: "A"
+										}
+									]
+								},
 								label: "What is next to A?",
 								uid: "q2"
 							},
 							{
-								answer: "B",
+								answer: {
+									type: "text",
+									options: [
+										{		
+											label: "B"
+										}
+									]
+								},
 								label: "What is next to B?",
 								uid: "q3"
 							},
 							{
-								answer: "D",
+								answer: {
+									type: "text",
+									options: [
+										{		
+											label: "D"
+										}
+									]
+								},
 								label: "What is next to C?",
 								uid: "q4"
 							},
 							{
-								answer: "E",
+								answer: {
+									type:"text",
+									options: [
+										{		
+											label: "E"
+										}
+									]
+								},
 								label: "What is next to D?",
 								uid: "q5"
 							},
 							{
-								answer: "F",
+								answer: {
+									type: "option",
+									options: [
+										{		
+											label: "F",
+											correct: "true"
+										},
+										{
+											label: "A"
+										},
+										{
+											label: "B"
+										},
+										{
+											label: "C"
+										}
+									]
+								},
 								label: "What is next to E?",
 								uid: "q6"
 							}
@@ -76,7 +138,14 @@ describe('api test', () => {
 							{
 								uid: 'q1111',
 								label: 'What is your name?',
-								answer: 'Dog'
+								answer: {
+									type: "text",
+									options: [
+										{
+											label: "Dog"
+										}
+									]
+								}
 							}
 						]
 					}
@@ -89,48 +158,13 @@ describe('api test', () => {
 		beforeEach(() => {
 			req = {
 				url: `http://localhost:${PORT}/quizzes/1`,
-      	method: 'GET',
-      	json: true
-    	};
+      			method: 'GET',
+      			json: true
+    		};
 		});
 		it('should return the quiz with the requested id', (done) => {
 			request(req, (err, res, body) => {
-				assert.deepEqual(body, {
-					uid: '1',
-					title: 'My Awesome quiz',
-					questions: [
-						{	
-							uid: 'q1',
-							label: 'What JS stands for?',
-							answer: 'JavaScript'
-						},
-						{
-							answer: "B",
-							label: "What is next to A?",
-							uid: "q2"
-						},
-						{
-							answer: "B",
-							label: "What is next to B?",
-							uid: "q3"
-						},
-						{
-							answer: "D",
-							label: "What is next to C?",
-							uid: "q4"
-						},
-						{
-							answer: "E",
-							label: "What is next to D?",
-							uid: "q5"
-						},
-						{
-							answer: "F",
-							label: "What is next to E?",
-							uid: "q6"
-						}
-					]
-				});
+				assert.strictEqual(body.uid, '1');
 				done();
 			});
 		});

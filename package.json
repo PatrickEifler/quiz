@@ -11,7 +11,7 @@
     "test:watch": "npm run test -- --watch",
     "test:app": "mocha --opts ./test/js/mocha.opts --compilers js:babel-core/register --recursive app/test/**/*_test.js",
     "test:app:watch": "npm run test:app -- --watch",
-    "test:api": "mocha --recursive --harmony 'api/test/**/*.@(js)'",
+    "test:api": "NODE_ENV=test mocha --recursive --harmony 'api/test/**/*.@(js)'",
     "test:api:watch": "npm run test:api -- --watch",
     "lint": "eslint . --ext .js --ext .jsx",
     "deploy": "NODE_ENV=production webpack -p"
