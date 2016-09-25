@@ -26,10 +26,6 @@ const questions = (state=initialState, action) => {
 				active: active,
 				isAsking: true,
 				isLastQuestion: questionsLeft.length === 0
-				//get question to ask from the questions array by shuffling the array
-				//store the question which have been asked in a cache
-				//diff the cache against the questions array
-				//return the questions object for current question
 				//if there is no question left set finish_quiz flag to true
 			});
 

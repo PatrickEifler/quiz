@@ -41,8 +41,6 @@ const quiz = (state=initialState, action) => {
 				//mover ranking reducer
 			});
 
-		//TODO: Add abort quiz action reducer
-
 		default:
 			return state;
 	}
