@@ -32,7 +32,7 @@ const questions = (state=initialState, action) => {
 		case types.ANSWER_QUESTION:
 			return Object.assign({}, state, {
 				isAsking: false
-				//implement answer options
+				//TODO: get action.answer
 				//check if answer is correct or false
 				//get the next question to ask
 				//compute score for current question and cache it

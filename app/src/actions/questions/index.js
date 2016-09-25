@@ -14,6 +14,13 @@ export function askQuestion() {
 	})
 }
 
+export function answerQuestion(answer) {
+	return (dispatch, getState) => {
+		type: types.ANSWER_QUESTION,
+		answer: answer
+	}
+}
+
 export function abortQuestion(uid) {
 	return {
 		type: types.ABORT_QUESTION

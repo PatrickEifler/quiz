@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuiz, startQuiz, abortQuiz } from '../actions/quiz';
-import { setQuestions, askQuestion, abortQuestion } from '../actions/questions';
+import { setQuestions, askQuestion, answerQuestion, abortQuestion } from '../actions/questions';
 import Quiz from '../components/quiz';
 import Question from '../components/question';
 
@@ -16,6 +16,7 @@ class QuizContainer extends Component {
 		this.abort = this.abort.bind(this);
 		this.nextQuestion = this.nextQuestion.bind(this);
 		this.finishQuiz = this.finishQuiz.bind(this);
+		this.answerQuestion = this.answerQuestion.bind(this);
 	}
 
 	componentDidMount() {
@@ -41,6 +42,10 @@ class QuizContainer extends Component {
 	nextQuestion() {
 		this.dispatch(askQuestion());
 		//start the timer for the question
+	}
+
+	answerQuestion(answer) {
+		this.dispatch(answerQuestion(answer))
 	}
 
 	finishQuiz() {
@@ -81,7 +86,8 @@ class QuizContainer extends Component {
  			quiz={this.props.quiz} 
  			quizAction={this.configureQuizAction()}
  			abort={this.abort}
- 			questions={this.props.questions} />;
+ 			questions={this.props.questions}
+ 			answerQuestion={this.answerQuestion} />;
 	}
 }
 
