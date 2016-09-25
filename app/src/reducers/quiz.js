@@ -28,6 +28,11 @@ const quiz = (state=initialState, action) => {
 				hasStarted: true
 			});
 
+		case types.ABORT_QUIZ:
+			return Object.assign({}, state, {
+				hasStarted: false
+			});
+
 		case types.FINISH_QUIZ:
 			return Object.assign({}, state, {
 				hasStarted: false

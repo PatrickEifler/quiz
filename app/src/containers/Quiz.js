@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuiz, startQuiz } from '../actions/quiz';
+import { fetchQuiz, startQuiz, abortQuiz } from '../actions/quiz';
 import { setQuestions, askQuestion, abortQuestion } from '../actions/questions';
 import Quiz from '../components/quiz';
 import Question from '../components/question';
@@ -19,10 +19,16 @@ class QuizContainer extends Component {
 	}
 
 	componentDidMount() {
-		this.dispatch(fetchQuiz(this.params.uid)).then(() => this.dispatch(setQuestions()));	
+		this.dispatch(fetchQuiz(this.params.uid));	
 	}
 
+	componentWillUnmount() {
+		this.dispatch(abortQuiz());
+	}
+
+
 	start() {
+		this.dispatch(setQuestions());
 		this.dispatch(startQuiz());
 		this.dispatch(askQuestion());
 		//start the timer for the question 

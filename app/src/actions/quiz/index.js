@@ -32,8 +32,15 @@ export function fetchQuiz(uid) {
 	};
 }
 
-export function startQuiz(uid) {
+export function startQuiz() {
 	return {
 		type: types.START_QUIZ
 	}
 };
+
+export function abortQuiz() {
+	return {
+		type: types.ABORT_QUIZ
+	}
+};
+
