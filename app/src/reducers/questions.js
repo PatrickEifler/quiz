@@ -2,6 +2,7 @@
 
 import * as types from '../actions/questions/constants';
 import shuffle from '../lib/shuffle';
+import evaluate from '../lib/evaluate';
 
 const initialState = {
 	items: [],
@@ -25,20 +26,30 @@ const questions = (state=initialState, action) => {
 				items: questionsLeft,
 				active: active,
 				isAsking: true,
-				isLastQuestion: questionsLeft.length === 0
+				isLastQuestion: questionsLeft.length === 0,
+				feedback: null
 				//if there is no question left set finish_quiz flag to true
 			});
 
 		case types.ANSWER_QUESTION:
-			console.log('answer action', action);
-			return Object.assign({}, state, {
+			const isCorrect = () => {
+				const { correct, label } = action.answer;
+				const { answer } = state.active;
+				if (action.answer.correct) { return true; }
+				else {
+					//the answer obj has no correct-key (anser type = text)
+					//evaluate answer source string with answer input
+					return evaluate(answer.options[0].label, label);
+				}
+				return false;
+			}
 
+			return Object.assign({}, state, {
+				feedback: {
+					isCorrect: isCorrect()
+				},
 				isAsking: false
-				//TODO: get action.answer
-				//check if answer is correct or false
-				// has correct key === is correct
-				// if not evaluate label with active answer from state
-				//compute score for current question and cache it
+				// compute score for current question and cache it
 				// get the next question to ask
 			});
 

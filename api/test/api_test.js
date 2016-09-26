@@ -64,7 +64,7 @@ describe('api test', () => {
 									type: "text",
 									options: [
 										{		
-											label: "A"
+											label: "B"
 										}
 									]
 								},
@@ -76,7 +76,7 @@ describe('api test', () => {
 									type: "text",
 									options: [
 										{		
-											label: "B"
+											label: "C"
 										}
 									]
 								},

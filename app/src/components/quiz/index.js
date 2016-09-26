@@ -2,11 +2,12 @@ import React from 'react';
 import Action from './action';
 import Question from '../question';
 import Answer from '../answer';
+import Feedback from '../feedback';
 
 export default (props) => {
 	const { hasStarted } = props.quiz;
 	const { title, uid } = props.quiz.item;
-	const { active, isAsking } = props.questions;
+	const { active, feedback, isAsking } = props.questions;
 
 	const renderQuizBody = () => {
 		if (hasStarted) {
@@ -29,11 +30,12 @@ export default (props) => {
 	};
 
 	return (
-		<div className={`quiz-container-${uid}`}>
+		<div className={`quiz-${uid} quiz-container`}>
 			<h2 className='quiz-title'>{title}</h2>
 			
 			{renderQuizBody()}
 
+			<Feedback feedback={feedback} />
 			<Action action={props.quizAction} />
 		</div>
 	);

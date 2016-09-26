@@ -35,6 +35,7 @@ describe('Questions Reducer', () => {
 					label: 'What tdd stands for?',
 					answer: 'test driven development'
 				},
+				feedback: null,
 				isAsking: true,
 				isLastQuestion: false,
 				items: [
@@ -70,6 +71,7 @@ describe('Questions Reducer', () => {
 					label: 'What /W stands for?',
 					answer: 'white space in regex'
 				},
+				feedback: null,
 				isLastQuestion: false,
 				isAsking: true,
 				items: [
@@ -100,12 +102,90 @@ describe('Questions Reducer', () => {
 					label: 'What /b stands for?',
 					answer: 'last character in regex string'
 				},
+				feedback: null,
 				isLastQuestion: true,
 				isAsking: true,
 				items: []
 			});
 		})
-
 	});
+
+	describe('answerQuestion', () => {
+		it('should evaluate the answer according to the correct key', () => {
+			assert.deepEqual(questionsReducer({
+				items: quiz.questions,
+				active: {},
+				isAsking: false,
+			}, {
+				type: 'ANSWER_QUESTION',
+				answer: {
+					correct: true,
+					label: 'some answer'
+				}
+			}).feedback, {
+				isCorrect: true
+			})
+		});
+		it('should evaluate the answer according to the source and input (correct)', () => {
+			assert.deepEqual(questionsReducer({
+				items: quiz.questions,
+				active: {
+					answer: {
+						options: [{
+							label: 'this is correct'
+						}]	
+					}
+				},
+				isAsking: false,
+			}, {
+				type: 'ANSWER_QUESTION',
+				answer: {
+					label: 'this is correct'
+				}
+			}).feedback, {
+				isCorrect: true
+			})
+		});
+		it('should evaluate the answer case-insensitive to the source and input', () => {
+			assert.deepEqual(questionsReducer({
+				items: quiz.questions,
+				active: {
+					answer: {
+						options: [{
+							label: 'This is correct'
+						}]	
+					}
+				},
+				isAsking: false,
+			}, {
+				type: 'ANSWER_QUESTION',
+				answer: {
+					label: 'thiS iS Correct'
+				}
+			}).feedback, {
+				isCorrect: true
+			})
+		})
+		it('should evaluate the answer according to the source and input (wrong)', () => {
+			assert.deepEqual(questionsReducer({
+				items: quiz.questions,
+				active: {
+					answer: {
+						options: [{
+							label: 'this is correct'
+						}]	
+					}
+				},
+				isAsking: false,
+			}, {
+				type: 'ANSWER_QUESTION',
+				answer: {
+					label: 'this is wrong'
+				}
+			}).feedback, {
+				isCorrect: false
+			})
+		})
+	})
 
 });

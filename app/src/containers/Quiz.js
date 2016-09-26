@@ -67,7 +67,7 @@ class QuizContainer extends Component {
 			callback = this.start;
 
 		} else if (isLastQuestion) {
-			label = 'finish quiz';
+			label = 'show result';
 			callback = this.finishQuiz;
 
 		} else if (hasStarted && !isAsking) {
