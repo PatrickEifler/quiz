@@ -7,11 +7,18 @@ export default class Input extends React.Component {
 		this.state = { value: '' };
 		this.handleChange = this.handleChange.bind(this);
 	}
+	clearAndFocus() {
+		this.setState({value: ''});
+		this._input.focus();
+	}
 	handleChange(event) {
 		this.setState({ value: event.target.value });
 	}
 	componentDidMount() {
-		this._input.focus();
+		this.clearAndFocus();
+	}
+	componentWillReceiveProps() {
+		this.clearAndFocus();
 	}
 	render() {
 		return (
