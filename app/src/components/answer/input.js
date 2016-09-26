@@ -10,11 +10,14 @@ export default class Input extends React.Component {
 	handleChange(event) {
 		this.setState({ value: event.target.value });
 	}
+	componentDidMount() {
+		this._input.focus();
+	}
 	render() {
-		console.log('state', this.state);
 		return (
 			<div className='input-wrapper'>
-				<input 
+				<input
+					ref={el => this._input = el}
 					type='text'
 					value={this.state.value}
 					onChange={this.handleChange} />

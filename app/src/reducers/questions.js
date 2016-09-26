@@ -30,12 +30,16 @@ const questions = (state=initialState, action) => {
 			});
 
 		case types.ANSWER_QUESTION:
+			console.log('answer action', action);
 			return Object.assign({}, state, {
+
 				isAsking: false
 				//TODO: get action.answer
 				//check if answer is correct or false
-				//get the next question to ask
+				// has correct key === is correct
+				// if not evaluate label with active answer from state
 				//compute score for current question and cache it
+				// get the next question to ask
 			});
 
 		case types.ABORT_QUESTION:
