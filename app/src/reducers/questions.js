@@ -8,7 +8,8 @@ const initialState = {
 	items: [],
 	active: {},
 	isAsking: false,
-	isLastQuestion: false
+	isLastQuestion: false,
+	feedback: null
 };
 
 const questions = (state=initialState, action) => {
@@ -28,7 +29,6 @@ const questions = (state=initialState, action) => {
 				isAsking: true,
 				isLastQuestion: questionsLeft.length === 0,
 				feedback: null
-				//if there is no question left set finish_quiz flag to true
 			});
 
 		case types.ANSWER_QUESTION:

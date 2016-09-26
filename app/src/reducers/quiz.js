@@ -37,8 +37,6 @@ const quiz = (state=initialState, action) => {
 			return Object.assign({}, state, {
 				hasStarted: false
 				//get the quiz results
-				//score from each question add score points to each questions
-				//mover ranking reducer
 			});
 
 		default:

@@ -4,7 +4,6 @@ export default (props) => {
 	const { feedback } = props;
 
 	function renderFeedback() {
-		console.log(props)
 		if (feedback) {
 			return (
 				<div className={`${feedback.isCorrect ? 'correct-answer' : 'wrong-answer'} feedback-inner`}>

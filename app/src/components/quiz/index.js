@@ -22,6 +22,8 @@ export default (props) => {
 						answer={active.answer} 
 						callback={props.answerQuestion}
 						isAsking={isAsking} />
+
+					<Feedback feedback={feedback} />
 				</div>
 			);
 		} else {
@@ -35,7 +37,6 @@ export default (props) => {
 			
 			{renderQuizBody()}
 
-			<Feedback feedback={feedback} />
 			<Action action={props.quizAction} />
 		</div>
 	);

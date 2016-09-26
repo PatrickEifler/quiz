@@ -15,8 +15,8 @@ class QuizContainer extends Component {
 		this.start = this.start.bind(this);
 		this.abort = this.abort.bind(this);
 		this.nextQuestion = this.nextQuestion.bind(this);
-		this.finishQuiz = this.finishQuiz.bind(this);
 		this.answerQuestion = this.answerQuestion.bind(this);
+		this.finishQuiz = this.finishQuiz.bind(this);
 	}
 
 	componentDidMount() {
@@ -26,7 +26,6 @@ class QuizContainer extends Component {
 	componentWillUnmount() {
 		this.dispatch(abortQuiz());
 	}
-
 
 	start() {
 		this.dispatch(setQuestions());
@@ -51,11 +50,10 @@ class QuizContainer extends Component {
 	finishQuiz() {
 		//TODO: dispatch finish quiz action
 		//Should go to the finish screen where the scores are presented
+		//=> quiz/1/result
 	}
 
 	configureQuizAction() {
-		//if not started => start quiz
-		//if started and time is up => next question
 		let { isAsking, isLastQuestion } = this.props.questions;
 		let { hasStarted } = this.props.quiz;
 
