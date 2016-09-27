@@ -2,13 +2,14 @@
 
 import * as types from '../actions/questions/constants';
 import shuffle from '../lib/shuffle';
-import evaluate from '../lib/evaluate';
+import evaluateAnswer from '../lib/evaluateAnswer';
 
 const initialState = {
 	items: [],
 	active: {},
 	isAsking: false,
 	isLastQuestion: false,
+	//move feedback to feedback reducer!
 	feedback: null
 };
 
@@ -32,21 +33,10 @@ const questions = (state=initialState, action) => {
 			});
 
 		case types.ANSWER_QUESTION:
-			const isCorrect = () => {
-				const { correct, label } = action.answer;
-				const { answer } = state.active;
-				if (action.answer.correct) { return true; }
-				else {
-					//the answer obj has no correct-key (anser type = text)
-					//evaluate answer source string with answer input
-					return evaluate(answer.options[0].label, label);
-				}
-				return false;
-			}
 
 			return Object.assign({}, state, {
 				feedback: {
-					isCorrect: isCorrect()
+					isCorrect: evaluateAnswer(action.answer, state.active)
 				},
 				isAsking: false
 				// compute score for current question and cache it

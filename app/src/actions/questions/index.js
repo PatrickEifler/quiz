@@ -1,6 +1,8 @@
 import * as types from './constants';
 
 export function setQuestions() {
+	//initially get the questions from the quiz item object
+	//set them on the questions object
 	return (dispatch, getState) => dispatch({
 		type: types.SET_QUESTIONS,
 		questions: getState().quiz.item.questions
@@ -8,6 +10,7 @@ export function setQuestions() {
 }
 
 export function askQuestion() {
+	//get the question from the questions object
 	return (dispatch, getState) => dispatch({
 		type: types.ASK_QUESTION,
 		questions: getState().questions.items
@@ -17,7 +20,8 @@ export function askQuestion() {
 export function answerQuestion(answer) {
 	return (dispatch, getState) => dispatch({
 		type: types.ANSWER_QUESTION,
-		answer: answer
+		active: getState().questions.active,
+		answer
 	})
 }
 

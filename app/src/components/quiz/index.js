@@ -3,6 +3,7 @@ import Action from './action';
 import Question from '../question';
 import Answer from '../answer';
 import Feedback from '../feedback';
+import Score from '../score';
 
 export default (props) => {
 	const { hasStarted } = props.quiz;
@@ -13,6 +14,9 @@ export default (props) => {
 		if (hasStarted) {
 			return (
 				<div className='quiz-body'>
+
+					<Score score={props.score} />
+
 					<Question className='question'
 						question={active} 
 						isAsking={isAsking}
