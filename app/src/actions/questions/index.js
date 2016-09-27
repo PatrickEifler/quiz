@@ -5,12 +5,12 @@ export function setQuestions() {
 	//set them on the questions object
 	return (dispatch, getState) => dispatch({
 		type: types.SET_QUESTIONS,
-		questions: getState().quiz.item.questions
+		allQuestions: getState().quiz.item.questions
 	});
 }
 
 export function askQuestion() {
-	//get the question from the questions object
+	//get the question items from the questions object
 	return (dispatch, getState) => dispatch({
 		type: types.ASK_QUESTION,
 		questions: getState().questions.items

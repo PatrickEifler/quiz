@@ -19,7 +19,7 @@ describe('Questions Actions', () => {
 		it('should dispatch the setQuestion action', () => {
 			assert.deepEqual(store.dispatch(actions.setQuestions()), {
 				type: types.SET_QUESTIONS,
-				questions: [
+				allQuestions: [
 					{
 				      "answer": "test driven development",
 				      "label": "What tdd stands for?",
