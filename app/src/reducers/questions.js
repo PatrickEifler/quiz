@@ -17,7 +17,7 @@ const questions = (state=initialState, action) => {
 	switch (action.type) {
 		case types.SET_QUESTIONS:
 			return Object.assign({}, state, {
-				items: action.questions
+				items: action.allQuestions
 			});
 
 		case types.ASK_QUESTION:
