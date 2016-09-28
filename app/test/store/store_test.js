@@ -32,8 +32,7 @@ describe('Store Test', () => {
 				items: [],
 				active: {},
 				isAsking: false,
-				isLastQuestion: false,
-				feedback: null
+				isLastQuestion: false
 			})
 		})
 	});

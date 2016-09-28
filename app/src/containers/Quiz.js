@@ -81,13 +81,16 @@ class QuizContainer extends Component {
 	}
 
  	render() {
- 		return <Quiz 
- 			quiz={this.props.quiz} 
- 			quizAction={this.configureQuizAction()}
- 			abort={this.abort}
- 			questions={this.props.questions}
- 			answerQuestion={this.answerQuestion} 
- 			score={this.props.score} />;
+ 		return (
+ 			<Quiz 
+	 			quiz={this.props.quiz} 
+	 			quizAction={this.configureQuizAction()}
+	 			abort={this.abort}
+	 			questions={this.props.questions}
+	 			answerQuestion={this.answerQuestion} 
+	 			score={this.props.score} 
+	 			feedback={this.props.feedback}/>
+	 		);
 	}
 }
 
@@ -95,7 +98,8 @@ function mapStateToProps(state, ownProps) {
 	return {
 		quiz: state.quiz,
 		questions: state.questions,
-		score: state.score
+		score: state.score,
+		feedback: state.feedback
 	};
 }
 

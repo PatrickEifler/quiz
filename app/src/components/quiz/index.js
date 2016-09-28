@@ -8,7 +8,7 @@ import Score from '../score';
 export default (props) => {
 	const { hasStarted } = props.quiz;
 	const { title, uid } = props.quiz.item;
-	const { active, feedback, isAsking } = props.questions;
+	const { active, isAsking } = props.questions;
 
 	const renderQuizBody = () => {
 		if (hasStarted) {
@@ -27,7 +27,7 @@ export default (props) => {
 						callback={props.answerQuestion}
 						isAsking={isAsking} />
 
-					<Feedback feedback={feedback} />
+					<Feedback feedback={props.feedback} />
 				</div>
 			);
 		} else {
