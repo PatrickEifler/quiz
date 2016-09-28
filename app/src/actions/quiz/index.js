@@ -33,9 +33,10 @@ export function fetchQuiz(uid) {
 }
 
 export function startQuiz() {
-	return {
-		type: types.START_QUIZ
-	}
+	return (dispatch, getState) => dispatch({
+		type: types.START_QUIZ,
+		questions: getState().quiz.item.questions
+	});
 };
 
 export function abortQuiz() {
