@@ -44,3 +44,9 @@ export function abortQuiz() {
 		type: types.ABORT_QUIZ
 	}
 };
+
+export function finishQuiz() {
+	return {
+		type: types.FINISH_QUIZ
+	}
+};

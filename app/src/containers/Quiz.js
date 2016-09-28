@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchQuiz, startQuiz, abortQuiz } from '../actions/quiz';
+import { fetchQuiz, startQuiz, abortQuiz, finishQuiz } from '../actions/quiz';
 import { askQuestion, answerQuestion, abortQuestion } from '../actions/questions';
 import Quiz from '../components/quiz';
 import Question from '../components/question';
@@ -47,6 +47,7 @@ class QuizContainer extends Component {
 	}
 
 	finishQuiz() {
+		this.dispatch(finishQuiz());
 		//TODO: dispatch finish quiz action
 		//Should go to the finish screen where the scores are presented
 		//=> quiz/1/result

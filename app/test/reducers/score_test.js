@@ -25,12 +25,12 @@ describe('Score Reducer', () => {
 					}
 				}
 			}), {
-				amount: 1
+				amount: 100
 			})
 		});
 		it('should remove a point from the score amount', () => {
 			assert.deepEqual(scoreReducer({
-				amount: 2
+				amount: 200
 			}, {
 				type: 'ANSWER_QUESTION',
 				answer: {
@@ -44,7 +44,7 @@ describe('Score Reducer', () => {
 					}
 				}
 			}), {
-				amount: 1
+				amount: 100
 			})
 		});
 		it('should not remove a point if score amount is already zero', () => {
@@ -55,6 +55,24 @@ describe('Score Reducer', () => {
 				answer: {
 					label: 'some answer'
 				},
+				active: {
+					answer: {
+						options: [{
+							label: 'this is correct'
+						}]	
+					}
+				}
+			}), {
+				amount: 0
+			})
+		});
+	});
+	describe('Finish Quiz', () => {
+		it('should reset score', () => {
+			assert.deepEqual(scoreReducer({
+				amount: 100
+			}, {
+				type: 'FINISH_QUIZ',
 				active: {
 					answer: {
 						options: [{
