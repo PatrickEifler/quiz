@@ -14,31 +14,6 @@ describe('Questions Actions', () => {
 		quiz: { item: { questions: quiz.questions } },
 		questions: { items: quiz.questions }
 	});
-
-	describe('setQuestions()', () => {
-		it('should dispatch the setQuestion action', () => {
-			assert.deepEqual(store.dispatch(actions.setQuestions()), {
-				type: types.SET_QUESTIONS,
-				allQuestions: [
-					{
-				      "answer": "test driven development",
-				      "label": "What tdd stands for?",
-				      "uid": "q1"
-				    },
-				    {
-				      "answer": "white space in regex",
-				      "label": "What /W stands for?",
-				      "uid": "q2"
-				    },
-				    {
-				      "answer": "last character in regex string",
-				      "label": "What /b stands for?",
-				      "uid": "q3"
-				    }
-				]
-			})
-		})
-	});
 	describe('askQuestion()', () => {
 		it('should dispatch the askQuestion action', () => {
 			assert.deepEqual(store.dispatch(actions.askQuestion()), {
