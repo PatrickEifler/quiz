@@ -43,4 +43,3 @@ export function abortQuiz() {
 		type: types.ABORT_QUIZ
 	}
 };
-
