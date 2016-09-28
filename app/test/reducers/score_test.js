@@ -1,8 +1,12 @@
 import { assert } from 'chai';
-import quiz from '../fixtures/quiz';
 import scoreReducer from '../../src/reducers/score';
 
-describe('Calculate Score', () => {
+describe('Score Reducer', () => {
+	it('should supply the initial state', () => {
+		assert.deepEqual(scoreReducer(undefined, {}), {
+			amount: 0
+		})
+	})
 	it('should add a point to the score amount', () => {
 		assert.deepEqual(scoreReducer({
 			amount: 0

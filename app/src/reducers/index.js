@@ -4,13 +4,15 @@ import quizzes from './quizzes';
 import quiz from './quiz';
 import questions from './questions';
 import score from './score';
+import feedback from './feedback';
 
 const rootReducer = combineReducers({
   routing,
   quizzes,
   quiz,
   questions,
-  score
+  score,
+  feedback
 });
 
 export default rootReducer;
