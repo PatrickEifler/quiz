@@ -17,6 +17,37 @@ describe('Questions Reducer', () => {
 		});
 	});
 
+	describe('Start Quiz', () => {
+		it('should set the question items on quiz start', () => {
+			assert.deepEqual(questionsReducer(undefined, {
+				type: 'START_QUIZ',
+				questions: quiz.questions
+			}), 
+			{
+				isAsking: false,
+				active: {},
+				isLastQuestion: false,
+				items: [
+					{
+						uid: 'q1',
+						label: 'What tdd stands for?',
+						answer: 'test driven development'
+					},
+					{
+						uid: 'q2',
+						label: 'What /W stands for?',
+						answer: 'white space in regex'
+					},
+					{
+						uid: 'q3',
+						label: 'What /b stands for?',
+						answer: 'last character in regex string'
+					}
+				]
+			})
+		});
+	});
+
 	describe('askQuestion', () => {
 		it('should set an active question and remove it from the items', () => {
 			assert.deepEqual(questionsReducer({

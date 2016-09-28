@@ -1,5 +1,6 @@
 'use strict';
 
+import { START_QUIZ } from '../actions/quiz/constants';
 import * as types from '../actions/questions/constants';
 import shuffle from '../lib/shuffle';
 
@@ -12,9 +13,10 @@ const initialState = {
 
 const questions = (state=initialState, action) => {
 	switch (action.type) {
-		case types.SET_QUESTIONS:
+
+		case START_QUIZ: 
 			return Object.assign({}, state, {
-				items: action.allQuestions
+				items: action.questions
 			});
 
 		case types.ASK_QUESTION:
