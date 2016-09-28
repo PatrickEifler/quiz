@@ -35,5 +35,15 @@ describe('Store Test', () => {
 				isLastQuestion: false
 			})
 		})
+		it('should map the initial state of the feedback reducer', () => {
+			assert.deepEqual(store.getState().feedback, {
+				isCorrect: null
+			})
+		})
+		it('should map the initial state of the feedback reducer', () => {
+			assert.deepEqual(store.getState().score, {
+				amount: 0
+			})
+		})
 	});
 })
