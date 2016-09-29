@@ -49,9 +49,6 @@ class QuizContainer extends Component {
 	finishQuiz() {
 		this.dispatch(finishQuiz());
 		this.dispatch(push(`/quizzes/${this.params.uid}/result`));
-		//TODO: dispatch finish quiz action
-		//Should go to the finish screen where the scores are presented
-		//=> quiz/1/result
 	}
 
 	configureQuizAction() {
