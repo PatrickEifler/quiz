@@ -1,9 +1,11 @@
 import React from 'react';
+import Title from './title';
 import Action from './action';
 import Question from '../question';
 import Answer from '../answer';
 import Feedback from '../feedback';
 import Score from '../score';
+
 
 export default (props) => {
 	const { hasStarted } = props.quiz;
@@ -37,7 +39,7 @@ export default (props) => {
 
 	return (
 		<div className={`quiz-${uid} quiz-container`}>
-			<h2 className='quiz-title'>{title}</h2>
+			<Title title={title} />
 			
 			{renderQuizBody()}
 

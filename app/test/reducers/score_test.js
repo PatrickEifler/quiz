@@ -67,19 +67,12 @@ describe('Score Reducer', () => {
 			})
 		});
 	});
-	describe('Finish Quiz', () => {
+	describe('Start Quiz', () => {
 		it('should reset score', () => {
 			assert.deepEqual(scoreReducer({
 				amount: 100
 			}, {
-				type: 'FINISH_QUIZ',
-				active: {
-					answer: {
-						options: [{
-							label: 'this is correct'
-						}]	
-					}
-				}
+				type: 'START_QUIZ'
 			}), {
 				amount: 0
 			})

@@ -7,7 +7,8 @@ describe('Quiz Reducer', () => {
 		assert.deepEqual(quizReducer(undefined, {}), {
 			isFetching: false,
 			item: {},
-			hasStarted: false
+			hasStarted: false,
+			hasFinished: false
 		});
 	});
 
@@ -15,7 +16,8 @@ describe('Quiz Reducer', () => {
 		assert.deepEqual(quizReducer(undefined, { type: 'REQUEST_QUIZ' }), {
 			isFetching: true,
 			item: {},
-			hasStarted: false
+			hasStarted: false,
+			hasFinished: false
 		});
 	});
 
@@ -28,6 +30,7 @@ describe('Quiz Reducer', () => {
 			}), {
 				isFetching: false,
 				lastReceived: 1,
+				hasFinished: false,
 				hasStarted: false,
 				item: {
 					title: 'My test quiz',

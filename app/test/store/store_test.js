@@ -19,7 +19,8 @@ describe('Store Test', () => {
 			assert.deepEqual(store.getState().quiz, {
 				isFetching: false,
 				item: {},
-				hasStarted: false
+				hasStarted: false,
+				hasFinished: false
 			});
 		});
 		it('should map the initial state of the routing reducer', () => {

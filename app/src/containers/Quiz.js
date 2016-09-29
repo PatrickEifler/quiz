@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchQuiz, startQuiz, abortQuiz, finishQuiz } from '../actions/quiz';
 import { askQuestion, answerQuestion, abortQuestion } from '../actions/questions';
+import { push } from 'react-router-redux';
 import Quiz from '../components/quiz';
-import Question from '../components/question';
 
 class QuizContainer extends Component {
 	constructor(props) {
@@ -48,6 +48,7 @@ class QuizContainer extends Component {
 
 	finishQuiz() {
 		this.dispatch(finishQuiz());
+		this.dispatch(push(`/quizzes/${this.params.uid}/result`));
 		//TODO: dispatch finish quiz action
 		//Should go to the finish screen where the scores are presented
 		//=> quiz/1/result
@@ -82,15 +83,15 @@ class QuizContainer extends Component {
 
  	render() {
  		return (
- 			<Quiz 
+			<Quiz 
 	 			quiz={this.props.quiz} 
 	 			quizAction={this.configureQuizAction()}
 	 			abort={this.abort}
 	 			questions={this.props.questions}
 	 			answerQuestion={this.answerQuestion} 
 	 			score={this.props.score} 
-	 			feedback={this.props.feedback}/>
-	 		);
+	 			feedback={this.props.feedback} />
+ 		);
 	}
 }
 

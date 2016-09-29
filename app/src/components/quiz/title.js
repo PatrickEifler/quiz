@@ -2,6 +2,6 @@ import React from 'react';
 
 export default (props) => {
 	return (
-		<div className='quiz-result'></div>
+		<h2 className='quiz-title'>{props.title}</h2>
 	);
-};
+}

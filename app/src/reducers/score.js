@@ -1,8 +1,8 @@
 'use strict';
 
 import { ANSWER_QUESTION } from '../actions/questions/constants';
-import { FINISH_QUIZ } from '../actions/quiz/constants';
-import evaluateAnswer from '../lib/evaluateAnswer'
+import { START_QUIZ } from '../actions/quiz/constants';
+import evaluateAnswer from '../lib/evaluateAnswer';
 
 const initialState = {
 	amount: 0
@@ -19,7 +19,7 @@ const score = (state=initialState, action) => {
 				amount: isCorrect ? state.amount += points : state.amount > 0 ? state.amount -= points : state.amount
 			});
 
-		case FINISH_QUIZ:
+		case START_QUIZ:
 			return Object.assign({}, state, {
 				amount: 0
 			})

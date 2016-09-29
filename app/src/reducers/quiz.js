@@ -5,6 +5,7 @@ import * as types from '../actions/quiz/constants';
 const initialState = {
 	isFetching: false,
 	hasStarted: false,
+	hasFinished: false,
 	item: {}
 };
 
@@ -25,7 +26,8 @@ const quiz = (state=initialState, action) => {
 
 		case types.START_QUIZ:
 			return Object.assign({}, state, {
-				hasStarted: true
+				hasStarted: true,
+				hasFinished: false
 			});
 
 		case types.ABORT_QUIZ:
@@ -35,8 +37,7 @@ const quiz = (state=initialState, action) => {
 
 		case types.FINISH_QUIZ:
 			return Object.assign({}, state, {
-				hasStarted: false
-				//get the quiz results
+				hasFinished: true
 			});
 
 		default:
