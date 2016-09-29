@@ -87,7 +87,8 @@ class QuizContainer extends Component {
 	 			questions={this.props.questions}
 	 			answerQuestion={this.answerQuestion} 
 	 			score={this.props.score} 
-	 			feedback={this.props.feedback} />
+	 			feedback={this.props.feedback} >
+	 		</Quiz>
  		);
 	}
 }
